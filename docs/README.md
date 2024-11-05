@@ -29,4 +29,4 @@
 `./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"  `       
 
 ### Документация 
-* [План тестирования](docs/Plan.md)
+* [План тестирования](https://github.com/ElenaVSkr/New-journey/blob/main/docs/Plan.md)
