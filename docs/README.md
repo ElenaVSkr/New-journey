@@ -17,16 +17,16 @@
 ### Шаги для запуска
 1. Запустить Docker Desktop.
 2. Открыть проект в IntelliJ IDEA.
-3. В терминале С помощью команды `docker-compose up` запустить контейнеры.
+3. В терминале с помощью команды `docker-compose up` запустить контейнеры.
 4. Запустить сервис с указанием пути к базе данных командой для mysql:
-java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar artifacts/aqa-shop.jar 
+* java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar artifacts/aqa-shop.jar 
 для postgresql:
-java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar artifacts/aqa-shop.jar       
+* java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar artifacts/aqa-shop.jar       
 5. Проверить работоспособность сервиса (http://localhost:8080/).
 6. В терминале запустить тесты с помощью команды для mysql:  
-./gradlew clean test "-Ddb.url=jdbc:mysql://localhost:3306/app"
+* ./gradlew clean test "-Ddb.url=jdbc:mysql://localhost:3306/app"
  для postgresql:
- ./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"         
+* ./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"         
 
 ### Документация 
 * [План тестирования](documentation/Plan.md)
