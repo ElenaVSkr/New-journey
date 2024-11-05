@@ -30,5 +30,5 @@
 
 ### Документация 
 * [План тестирования](https://github.com/ElenaVSkr/New-journey/blob/main/docs/Plan.md)
-* [Отчет о проделанной работе] (https://github.com/ElenaVSkr/New-journey/blob/main/docs/Summary.md)
-* [Отчет по итогам тестирования] (https://github.com/ElenaVSkr/New-journey/blob/main/docs/Report.md)
+* [Отчет о проделанной работе](https://github.com/ElenaVSkr/New-journey/blob/main/docs/Summary.md)
+* [Отчет по итогам тестирования](https://github.com/ElenaVSkr/New-journey/blob/main/docs/Report.md)
