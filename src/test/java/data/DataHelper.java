@@ -45,7 +45,7 @@ public class DataHelper {
     @Value
     public static class CardInfo {
         public String cardNumber;
-        public String moth;
+        public String month;
         public String year;
         public String cardHolder;
         public String cvc;
