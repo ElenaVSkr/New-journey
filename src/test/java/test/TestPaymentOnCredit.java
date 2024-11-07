@@ -15,12 +15,12 @@ import pages.PurchaseFormPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static pages.FormPage.InputDataEntry;
+
 
 public class TestPaymentOnCredit {
     private final DataHelper.CardInfo validDataWithCardApproved = DataHelper.getValidDataCard(DataHelper.getCardNumberSuccessfully());
     private final DataHelper.CardInfo validDataWithCardDeclined = DataHelper.getValidDataCard(DataHelper.getCardNumberDeclined());
-    private final FormPage FormPage = new FormPage();
+    private final FormPage formPage = new FormPage();
 
     @BeforeAll
     static void setUpAll() {
@@ -42,16 +42,16 @@ public class TestPaymentOnCredit {
     @Test
     public void verificationOfSuccessfulPurchaseOnCredit() {
         Database.deleteAllStringsForCreditRequestEntity();
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 validDataWithCardApproved.year,
                 validDataWithCardApproved.cardHolder,
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.successBuy();
+        formPage.clickOrderButton();
+        formPage.successBuy();
         assertEquals("APPROVED", Database.checkStatusCredit());
     }
 
@@ -59,287 +59,287 @@ public class TestPaymentOnCredit {
     @Test
     public void checkingTheRefusalOfPurchaseOnCredit() {
         Database.deleteAllStringsForCreditRequestEntity();
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardDeclined.cardNumber,
-                validDataWithCardDeclined.moth,
+                validDataWithCardDeclined.month,
                 validDataWithCardDeclined.year,
                 validDataWithCardDeclined.cardHolder,
                 validDataWithCardDeclined.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.rejected();
+        formPage.clickOrderButton();
+        formPage.rejected();
         assertEquals("DECLINED", Database.checkStatusCredit());
     }
 
     @Name("Ввод в поле Номер карты значения с одной цифрой с результатом Неверный формат")
     @Test
     void enteringSingleDigitInTheCardNumberField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 "1",
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 validDataWithCardApproved.year,
                 validDataWithCardApproved.cardHolder,
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldErrorForCheckingOneField();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
     }
 
     @Name("Ввод в поле Номер карты шести цифр с результатом Неверный формат")
     @Test
     void enteringSixDigitsInTheCardNumberField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 "444444",
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 validDataWithCardApproved.year,
                 validDataWithCardApproved.cardHolder,
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldErrorForCheckingOneField();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
     }
 
     @Name("Пустое поле Номер карты c результатом Неверный формат")
     @Test
-    void EmptyCardNumberField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+    void emptyCardNumberField() {
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 "",
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 validDataWithCardApproved.year,
                 validDataWithCardApproved.cardHolder,
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldErrorForCheckingOneField();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
 
     }
 
     @Name("Ввод в поле Месяц несуществующего номера месяца с результатом Неверно указан срок действия карты")
     @Test
     void enteringNonExistentNumberInTheMonthField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
                 "31",
                 validDataWithCardApproved.year,
                 validDataWithCardApproved.cardHolder,
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.checkFieldMothErrorWithInvalidValue();
+        formPage.clickOrderButton();
+        formPage.errorTheValidityPeriodOfTheCardIsIncorrectlySpecified();
     }
 
     @Name("Проверка поля Месяц с вводом ноля и результатом Неверный формат")
     @Test
     void enteringZeroInTheMonthField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
                 "0",
                 validDataWithCardApproved.year,
                 validDataWithCardApproved.cardHolder,
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldMothError();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
     }
 
     @Name("Пустое поле МЕСЯЦ c результатом Неверный формат")
     @Test
     void emptyMonthField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
                 "",
                 validDataWithCardApproved.year,
                 validDataWithCardApproved.cardHolder,
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldMothError();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
     }
 
     @Name("Проверка поля Год c вводом ноля и результатом Неверный формат")
     @Test
     void enteringZeroInTheYearField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 "0",
                 validDataWithCardApproved.cardHolder,
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldYearError();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
     }
 
     @Name("Проверка поля Год c вводом одной цифры и результатом Неверный формат")
     @Test
     void enteringTheNumberOneInTheYearField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 "1",
                 validDataWithCardApproved.cardHolder,
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldYearError();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
     }
 
     @Name("Проверка поля Год c истекшим годом и результатом Истек срок действия карты")
     @Test
     void enteringThePastYear() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 "15",
                 validDataWithCardApproved.cardHolder,
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.checkFieldYearErrorWithInvalidValue();
+        formPage.clickOrderButton();
+        formPage.errorTheCardExpired();
     }
 
     @Name("Пустое поле Год c результатом Неверный формат")
     @Test
     void emptyYearField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 "",
                 validDataWithCardApproved.cardHolder,
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldYearError();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
     }
 
     @Name("Проверка поля Владелец c вводом только фамилии и результатом Неверный формат")
     @Test
     void shouldNotificationAboutAnEmptyHolderFieldWillAppearBuyByCard() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 validDataWithCardApproved.year,
                 "Ivanov",
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldHolderError();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
     }
 
     @Name("Проверка поля Владелец c вводом кириллицы и результатом Неверный формат")
     @Test
     void enteringTheCyrillicAlphabetInTheOwnerField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 validDataWithCardApproved.year,
                 "Иванов Иван",
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldHolderError();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
     }
 
     @Name("Проверка поля Владелец c вводом символов и результатом Неверный формат")
     @Test
     void enteringCharactersInTheOwnerField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 validDataWithCardApproved.year,
                 DataHelper.getInvalidSymbols(),
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldHolderError();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
     }
 
     @Name("Проверка поля Владелец c вводом цифр и результатом Неверный формат")
     @Test
     void enteringNumbersInTheOwnerField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 validDataWithCardApproved.year,
                 "12345",
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldHolderError();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
     }
 
     @Name("Проверка пустого поля Владелец и результатом Поле обязателно для заполнения")
     @Test
     void checkingTheEmptyOwnerField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 validDataWithCardApproved.year,
                 "",
                 validDataWithCardApproved.cvc
         );
-        FormPage.clickOrderButton();
-        FormPage.errorInTheEmptyOwnerField();
+        formPage.clickOrderButton();
+        formPage.errorTheFieldIsRequired();
     }
 
     @Name("Проверка поля CVC c вводом ноля и результатом Неверный формат")
     @Test
     void enteringZeroInTheCvcField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 validDataWithCardApproved.year,
                 validDataWithCardApproved.cardHolder,
                 "0"
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldCvcError();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
     }
 
     @Name("Проверка поля CVC c одной цифрой и результатом Неверный формат")
     @Test
     void enteringSingleDigitInTheCvcField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 validDataWithCardApproved.year,
                 validDataWithCardApproved.cardHolder,
                 "1"
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldCvcError();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
     }
 
     @Name("Проверка пустого поля CVC и результатом Неверный формат")
     @Test
     void checkingAnEmptyCvcField() {
-        PurchaseFormPage.purchaseByCredit();
-        InputDataEntry(
+        formPage.purchaseByCredit();
+        formPage.inputDataEntry(
                 validDataWithCardApproved.cardNumber,
-                validDataWithCardApproved.moth,
+                validDataWithCardApproved.month,
                 validDataWithCardApproved.year,
                 validDataWithCardApproved.cardHolder,
                 ""
         );
-        FormPage.clickOrderButton();
-        FormPage.checkEmptyFieldCvcError();
+        formPage.clickOrderButton();
+        formPage.invalidFormat();
     }
 }

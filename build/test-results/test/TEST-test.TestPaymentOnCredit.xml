@@ -1,17 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.TestPaymentOnCredit" tests="20" skipped="0" failures="6" errors="0" timestamp="2024-11-05T14:06:28" hostname="DESKTOP-79JJQ70" time="52.718">
+<testsuite name="test.TestPaymentOnCredit" tests="20" skipped="0" failures="7" errors="0" timestamp="2024-11-07T15:41:05" hostname="DESKTOP-79JJQ70" time="51.698">
   <properties/>
-  <testcase name="checkingTheEmptyOwnerField()" classname="test.TestPaymentOnCredit" time="0.562"/>
-  <testcase name="enteringZeroInTheCvcField()" classname="test.TestPaymentOnCredit" time="0.609"/>
-  <testcase name="emptyMonthField()" classname="test.TestPaymentOnCredit" time="0.567"/>
-  <testcase name="enteringSingleDigitInTheCardNumberField()" classname="test.TestPaymentOnCredit" time="0.59"/>
-  <testcase name="enteringZeroInTheMonthField()" classname="test.TestPaymentOnCredit" time="0.592"/>
-  <testcase name="EmptyCardNumberField()" classname="test.TestPaymentOnCredit" time="0.55"/>
-  <testcase name="enteringTheCyrillicAlphabetInTheOwnerField()" classname="test.TestPaymentOnCredit" time="4.906">
-    <failure message="Element not found {[class='input__sub'][0]}&#13;&#10;Expected: visible&#13;&#10;Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815596481.6.png&#13;&#10;Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815596481.6.html&#13;&#10;Timeout: 4 s.&#13;&#10;Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}" type="com.codeborne.selenide.ex.ElementNotFound">Element not found {[class='input__sub'][0]}
+  <testcase name="checkingTheEmptyOwnerField()" classname="test.TestPaymentOnCredit" time="4.827">
+    <failure message="Element not found {[class='input__sub'][3]}&#13;&#10;Expected: visible&#13;&#10;Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994069726.7.png&#13;&#10;Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994069726.7.html&#13;&#10;Timeout: 4 s.&#13;&#10;Caused by: java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 1" type="com.codeborne.selenide.ex.ElementNotFound">Element not found {[class='input__sub'][3]}
 Expected: visible
-Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815596481.6.png
-Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815596481.6.html
+Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994069726.7.png
+Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994069726.7.html
+Timeout: 4 s.
+Caused by: java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 1
+	at app//com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:91)
+	at app//com.codeborne.selenide.impl.CollectionElement.createElementNotFoundError(CollectionElement.java:63)
+	at app//com.codeborne.selenide.impl.WebElementSource.handleError(WebElementSource.java:143)
+	at app//com.codeborne.selenide.impl.WebElementSource.checkConditionAndReturnElement(WebElementSource.java:127)
+	at app//com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:104)
+	at app//com.codeborne.selenide.commands.Should.execute(Should.java:30)
+	at app//com.codeborne.selenide.commands.Should.execute(Should.java:14)
+	at app//com.codeborne.selenide.commands.Commands.execute(Commands.java:163)
+	at app//com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:132)
+	at app//com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:84)
+	at app//com.sun.proxy.$Proxy16.shouldBe(Unknown Source)
+	at app//pages.FormPage.errorTheFieldIsRequired(FormPage.java:85)
+	at app//test.TestPaymentOnCredit.checkingTheEmptyOwnerField(TestPaymentOnCredit.java:298)
+	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.23/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.23/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.api.extension.InvocationInterceptor.interceptTestMethod(InvocationInterceptor.java:118)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@11.0.23/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@11.0.23/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at app//org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at app//org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.23/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.23/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 1
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+	at java.base/java.util.Objects.checkIndex(Objects.java:374)
+	at java.base/java.util.ArrayList.get(ArrayList.java:459)
+	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:34)
+	at com.codeborne.selenide.impl.BySelectorCollection.getElement(BySelectorCollection.java:47)
+	at com.codeborne.selenide.impl.CollectionElement.getWebElement(CollectionElement.java:46)
+	at com.codeborne.selenide.impl.WebElementSource.checkConditionAndReturnElement(WebElementSource.java:116)
+	... 99 more
+</failure>
+  </testcase>
+  <testcase name="enteringZeroInTheCvcField()" classname="test.TestPaymentOnCredit" time="0.569"/>
+  <testcase name="emptyMonthField()" classname="test.TestPaymentOnCredit" time="0.561"/>
+  <testcase name="emptyCardNumberField()" classname="test.TestPaymentOnCredit" time="0.537"/>
+  <testcase name="enteringSingleDigitInTheCardNumberField()" classname="test.TestPaymentOnCredit" time="0.553"/>
+  <testcase name="enteringZeroInTheMonthField()" classname="test.TestPaymentOnCredit" time="0.587"/>
+  <testcase name="enteringTheCyrillicAlphabetInTheOwnerField()" classname="test.TestPaymentOnCredit" time="4.896">
+    <failure message="Element not found {[class='input__sub'][0]}&#13;&#10;Expected: visible&#13;&#10;Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994077463.8.png&#13;&#10;Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994077463.8.html&#13;&#10;Timeout: 4 s.&#13;&#10;Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}" type="com.codeborne.selenide.ex.ElementNotFound">Element not found {[class='input__sub'][0]}
+Expected: visible
+Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994077463.8.png
+Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994077463.8.html
 Timeout: 4 s.
 Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}
 	at app//com.codeborne.selenide.impl.CollectionElement.createElementNotFoundError(CollectionElement.java:61)
@@ -24,7 +146,7 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {&
 	at app//com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:132)
 	at app//com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:84)
 	at app//com.sun.proxy.$Proxy16.shouldBe(Unknown Source)
-	at app//pages.FormPage.checkEmptyFieldHolderError(FormPage.java:79)
+	at app//pages.FormPage.invalidFormat(FormPage.java:73)
 	at app//test.TestPaymentOnCredit.enteringTheCyrillicAlphabetInTheOwnerField(TestPaymentOnCredit.java:253)
 	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -117,15 +239,15 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {&
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}
-  (Session info: chrome=130.0.6723.92)
+  (Session info: chrome=130.0.6723.93)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.23'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ae4087d4cbc1f2f3b9e16b0216b59dfa, findElement {using=css selector, value=[class='input__sub']}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 130.0.6723.92, chrome: {chromedriverVersion: 130.0.6723.91 (53ac07678369..., userDataDir: C:\Users\Skrip\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63327}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63327/devtoo..., se:cdpVersion: 130.0.6723.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ae4087d4cbc1f2f3b9e16b0216b59dfa
-	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+Command: [f406134c52323a37ed6ac66fed601f00, findElement {using=css selector, value=[class='input__sub']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 130.0.6723.93, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\Skrip\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49932}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49932/devtoo..., se:cdpVersion: 130.0.6723.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f406134c52323a37ed6ac66fed601f00
+	at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
 	at java.base@11.0.23/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base@11.0.23/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
 	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
@@ -148,11 +270,11 @@ Session ID: ae4087d4cbc1f2f3b9e16b0216b59dfa
 	... 99 more
 </failure>
   </testcase>
-  <testcase name="checkingTheRefusalOfPurchaseOnCredit()" classname="test.TestPaymentOnCredit" time="10.844">
-    <failure message="Element not found {[class='notification__content'].findBy(exact text &quot;Ошибка! Банк отказал в проведении операции.&quot;)}&#13;&#10;Expected: visible&#13;&#10;Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815607351.7.png&#13;&#10;Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815607351.7.html&#13;&#10;Timeout: 10 s.&#13;&#10;Caused by: NoSuchElementException: Cannot locate an element [class='notification__content'].findBy(exact text &quot;Ошибка! Банк отказал в проведении операции.&quot;)" type="com.codeborne.selenide.ex.ElementNotFound">Element not found {[class='notification__content'].findBy(exact text &quot;Ошибка! Банк отказал в проведении операции.&quot;)}
+  <testcase name="checkingTheRefusalOfPurchaseOnCredit()" classname="test.TestPaymentOnCredit" time="10.89">
+    <failure message="Element not found {[class='notification__content'].findBy(exact text &quot;Ошибка! Банк отказал в проведении операции.&quot;)}&#13;&#10;Expected: visible&#13;&#10;Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994088394.9.png&#13;&#10;Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994088394.9.html&#13;&#10;Timeout: 10 s.&#13;&#10;Caused by: NoSuchElementException: Cannot locate an element [class='notification__content'].findBy(exact text &quot;Ошибка! Банк отказал в проведении операции.&quot;)" type="com.codeborne.selenide.ex.ElementNotFound">Element not found {[class='notification__content'].findBy(exact text &quot;Ошибка! Банк отказал в проведении операции.&quot;)}
 Expected: visible
-Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815607351.7.png
-Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815607351.7.html
+Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994088394.9.png
+Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994088394.9.html
 Timeout: 10 s.
 Caused by: NoSuchElementException: Cannot locate an element [class='notification__content'].findBy(exact text &quot;Ошибка! Банк отказал в проведении операции.&quot;)
 	at app//com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:91)
@@ -165,7 +287,7 @@ Caused by: NoSuchElementException: Cannot locate an element [class='notification
 	at app//com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:132)
 	at app//com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:84)
 	at app//com.sun.proxy.$Proxy16.shouldBe(Unknown Source)
-	at app//pages.FormPage.rejected(FormPage.java:63)
+	at app//pages.FormPage.rejected(FormPage.java:69)
 	at app//test.TestPaymentOnCredit.checkingTheRefusalOfPurchaseOnCredit(TestPaymentOnCredit.java:71)
 	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -267,11 +389,11 @@ Driver info: driver.version: unknown
 	... 99 more
 </failure>
   </testcase>
-  <testcase name="enteringCharactersInTheOwnerField()" classname="test.TestPaymentOnCredit" time="4.894">
-    <failure message="Element not found {[class='input__sub'][0]}&#13;&#10;Expected: visible&#13;&#10;Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815612241.8.png&#13;&#10;Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815612241.8.html&#13;&#10;Timeout: 4 s.&#13;&#10;Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}" type="com.codeborne.selenide.ex.ElementNotFound">Element not found {[class='input__sub'][0]}
+  <testcase name="enteringCharactersInTheOwnerField()" classname="test.TestPaymentOnCredit" time="4.691">
+    <failure message="Element not found {[class='input__sub'][0]}&#13;&#10;Expected: visible&#13;&#10;Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994093075.10.png&#13;&#10;Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994093075.10.html&#13;&#10;Timeout: 4 s.&#13;&#10;Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}" type="com.codeborne.selenide.ex.ElementNotFound">Element not found {[class='input__sub'][0]}
 Expected: visible
-Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815612241.8.png
-Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815612241.8.html
+Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994093075.10.png
+Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994093075.10.html
 Timeout: 4 s.
 Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}
 	at app//com.codeborne.selenide.impl.CollectionElement.createElementNotFoundError(CollectionElement.java:61)
@@ -284,7 +406,7 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {&
 	at app//com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:132)
 	at app//com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:84)
 	at app//com.sun.proxy.$Proxy16.shouldBe(Unknown Source)
-	at app//pages.FormPage.checkEmptyFieldHolderError(FormPage.java:79)
+	at app//pages.FormPage.invalidFormat(FormPage.java:73)
 	at app//test.TestPaymentOnCredit.enteringCharactersInTheOwnerField(TestPaymentOnCredit.java:268)
 	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -377,15 +499,15 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {&
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}
-  (Session info: chrome=130.0.6723.92)
+  (Session info: chrome=130.0.6723.93)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.23'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ae4087d4cbc1f2f3b9e16b0216b59dfa, findElement {using=css selector, value=[class='input__sub']}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 130.0.6723.92, chrome: {chromedriverVersion: 130.0.6723.91 (53ac07678369..., userDataDir: C:\Users\Skrip\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63327}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63327/devtoo..., se:cdpVersion: 130.0.6723.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ae4087d4cbc1f2f3b9e16b0216b59dfa
-	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+Command: [f406134c52323a37ed6ac66fed601f00, findElement {using=css selector, value=[class='input__sub']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 130.0.6723.93, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\Skrip\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49932}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49932/devtoo..., se:cdpVersion: 130.0.6723.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f406134c52323a37ed6ac66fed601f00
+	at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
 	at java.base@11.0.23/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base@11.0.23/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
 	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
@@ -408,11 +530,11 @@ Session ID: ae4087d4cbc1f2f3b9e16b0216b59dfa
 	... 99 more
 </failure>
   </testcase>
-  <testcase name="enteringNumbersInTheOwnerField()" classname="test.TestPaymentOnCredit" time="4.882">
-    <failure message="Element not found {[class='input__sub'][0]}&#13;&#10;Expected: visible&#13;&#10;Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815617141.9.png&#13;&#10;Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815617141.9.html&#13;&#10;Timeout: 4 s.&#13;&#10;Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}" type="com.codeborne.selenide.ex.ElementNotFound">Element not found {[class='input__sub'][0]}
+  <testcase name="enteringNumbersInTheOwnerField()" classname="test.TestPaymentOnCredit" time="4.863">
+    <failure message="Element not found {[class='input__sub'][0]}&#13;&#10;Expected: visible&#13;&#10;Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994097951.11.png&#13;&#10;Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994097951.11.html&#13;&#10;Timeout: 4 s.&#13;&#10;Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}" type="com.codeborne.selenide.ex.ElementNotFound">Element not found {[class='input__sub'][0]}
 Expected: visible
-Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815617141.9.png
-Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815617141.9.html
+Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994097951.11.png
+Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994097951.11.html
 Timeout: 4 s.
 Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}
 	at app//com.codeborne.selenide.impl.CollectionElement.createElementNotFoundError(CollectionElement.java:61)
@@ -425,7 +547,7 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {&
 	at app//com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:132)
 	at app//com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:84)
 	at app//com.sun.proxy.$Proxy16.shouldBe(Unknown Source)
-	at app//pages.FormPage.checkEmptyFieldHolderError(FormPage.java:79)
+	at app//pages.FormPage.invalidFormat(FormPage.java:73)
 	at app//test.TestPaymentOnCredit.enteringNumbersInTheOwnerField(TestPaymentOnCredit.java:283)
 	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -518,15 +640,15 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {&
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}
-  (Session info: chrome=130.0.6723.92)
+  (Session info: chrome=130.0.6723.93)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.23'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ae4087d4cbc1f2f3b9e16b0216b59dfa, findElement {using=css selector, value=[class='input__sub']}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 130.0.6723.92, chrome: {chromedriverVersion: 130.0.6723.91 (53ac07678369..., userDataDir: C:\Users\Skrip\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63327}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63327/devtoo..., se:cdpVersion: 130.0.6723.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ae4087d4cbc1f2f3b9e16b0216b59dfa
-	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+Command: [f406134c52323a37ed6ac66fed601f00, findElement {using=css selector, value=[class='input__sub']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 130.0.6723.93, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\Skrip\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49932}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49932/devtoo..., se:cdpVersion: 130.0.6723.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f406134c52323a37ed6ac66fed601f00
+	at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
 	at java.base@11.0.23/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base@11.0.23/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
 	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
@@ -549,13 +671,13 @@ Session ID: ae4087d4cbc1f2f3b9e16b0216b59dfa
 	... 99 more
 </failure>
   </testcase>
-  <testcase name="enteringThePastYear()" classname="test.TestPaymentOnCredit" time="0.597"/>
-  <testcase name="emptyYearField()" classname="test.TestPaymentOnCredit" time="0.566"/>
-  <testcase name="shouldNotificationAboutAnEmptyHolderFieldWillAppearBuyByCard()" classname="test.TestPaymentOnCredit" time="4.84">
-    <failure message="Element not found {[class='input__sub'][0]}&#13;&#10;Expected: visible&#13;&#10;Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815623197.10.png&#13;&#10;Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815623197.10.html&#13;&#10;Timeout: 4 s.&#13;&#10;Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}" type="com.codeborne.selenide.ex.ElementNotFound">Element not found {[class='input__sub'][0]}
+  <testcase name="enteringThePastYear()" classname="test.TestPaymentOnCredit" time="0.568"/>
+  <testcase name="emptyYearField()" classname="test.TestPaymentOnCredit" time="0.56"/>
+  <testcase name="shouldNotificationAboutAnEmptyHolderFieldWillAppearBuyByCard()" classname="test.TestPaymentOnCredit" time="4.839">
+    <failure message="Element not found {[class='input__sub'][0]}&#13;&#10;Expected: visible&#13;&#10;Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994103973.12.png&#13;&#10;Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994103973.12.html&#13;&#10;Timeout: 4 s.&#13;&#10;Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}" type="com.codeborne.selenide.ex.ElementNotFound">Element not found {[class='input__sub'][0]}
 Expected: visible
-Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815623197.10.png
-Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815623197.10.html
+Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994103973.12.png
+Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994103973.12.html
 Timeout: 4 s.
 Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}
 	at app//com.codeborne.selenide.impl.CollectionElement.createElementNotFoundError(CollectionElement.java:61)
@@ -568,7 +690,7 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {&
 	at app//com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:132)
 	at app//com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:84)
 	at app//com.sun.proxy.$Proxy16.shouldBe(Unknown Source)
-	at app//pages.FormPage.checkEmptyFieldHolderError(FormPage.java:79)
+	at app//pages.FormPage.invalidFormat(FormPage.java:73)
 	at app//test.TestPaymentOnCredit.shouldNotificationAboutAnEmptyHolderFieldWillAppearBuyByCard(TestPaymentOnCredit.java:238)
 	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -661,15 +783,15 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {&
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class='input__sub']&quot;}
-  (Session info: chrome=130.0.6723.92)
+  (Session info: chrome=130.0.6723.93)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.23'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ae4087d4cbc1f2f3b9e16b0216b59dfa, findElement {using=css selector, value=[class='input__sub']}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 130.0.6723.92, chrome: {chromedriverVersion: 130.0.6723.91 (53ac07678369..., userDataDir: C:\Users\Skrip\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63327}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63327/devtoo..., se:cdpVersion: 130.0.6723.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ae4087d4cbc1f2f3b9e16b0216b59dfa
-	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+Command: [f406134c52323a37ed6ac66fed601f00, findElement {using=css selector, value=[class='input__sub']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 130.0.6723.93, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\Skrip\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49932}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49932/devtoo..., se:cdpVersion: 130.0.6723.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f406134c52323a37ed6ac66fed601f00
+	at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
 	at java.base@11.0.23/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base@11.0.23/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
 	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
@@ -692,17 +814,17 @@ Session ID: ae4087d4cbc1f2f3b9e16b0216b59dfa
 	... 99 more
 </failure>
   </testcase>
-  <testcase name="enteringZeroInTheYearField()" classname="test.TestPaymentOnCredit" time="0.581"/>
-  <testcase name="enteringSixDigitsInTheCardNumberField()" classname="test.TestPaymentOnCredit" time="0.577"/>
-  <testcase name="enteringSingleDigitInTheCvcField()" classname="test.TestPaymentOnCredit" time="0.582"/>
-  <testcase name="verificationOfSuccessfulPurchaseOnCredit()" classname="test.TestPaymentOnCredit" time="9.872"/>
-  <testcase name="enteringTheNumberOneInTheYearField()" classname="test.TestPaymentOnCredit" time="0.598"/>
-  <testcase name="checkingAnEmptyCvcField()" classname="test.TestPaymentOnCredit" time="4.701">
-    <failure message="Element should have text &quot;Неверный формат&quot; {[class='input__sub'][0]}&#13;&#10;Element: '&lt;span class=&quot;input__sub&quot;&gt;Поле обязательно для заполнения&lt;/span&gt;'&#13;&#10;Actual value: text=&quot;Поле обязательно для заполнения&quot;&#13;&#10;Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815640180.11.png&#13;&#10;Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815640180.11.html&#13;&#10;Timeout: 4 s." type="com.codeborne.selenide.ex.ElementShould">Element should have text &quot;Неверный формат&quot; {[class='input__sub'][0]}
+  <testcase name="enteringZeroInTheYearField()" classname="test.TestPaymentOnCredit" time="0.563"/>
+  <testcase name="enteringSixDigitsInTheCardNumberField()" classname="test.TestPaymentOnCredit" time="0.583"/>
+  <testcase name="enteringSingleDigitInTheCvcField()" classname="test.TestPaymentOnCredit" time="0.563"/>
+  <testcase name="verificationOfSuccessfulPurchaseOnCredit()" classname="test.TestPaymentOnCredit" time="5.019"/>
+  <testcase name="enteringTheNumberOneInTheYearField()" classname="test.TestPaymentOnCredit" time="0.558"/>
+  <testcase name="checkingAnEmptyCvcField()" classname="test.TestPaymentOnCredit" time="4.676">
+    <failure message="Element should have text &quot;Неверный формат&quot; {[class='input__sub'][0]}&#13;&#10;Element: '&lt;span class=&quot;input__sub&quot;&gt;Поле обязательно для заполнения&lt;/span&gt;'&#13;&#10;Actual value: text=&quot;Поле обязательно для заполнения&quot;&#13;&#10;Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994116011.13.png&#13;&#10;Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994116011.13.html&#13;&#10;Timeout: 4 s." type="com.codeborne.selenide.ex.ElementShould">Element should have text &quot;Неверный формат&quot; {[class='input__sub'][0]}
 Element: '&lt;span class=&quot;input__sub&quot;&gt;Поле обязательно для заполнения&lt;/span&gt;'
 Actual value: text=&quot;Поле обязательно для заполнения&quot;
-Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815640180.11.png
-Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730815640180.11.html
+Screenshot: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994116011.13.png
+Page source: file:/C:/Users/Skrip/Desktop/Journey/build/reports/tests/1730994116011.13.html
 Timeout: 4 s.
 	at app//com.codeborne.selenide.impl.WebElementSource.handleError(WebElementSource.java:149)
 	at app//com.codeborne.selenide.impl.WebElementSource.checkConditionAndReturnElement(WebElementSource.java:127)
@@ -713,7 +835,7 @@ Timeout: 4 s.
 	at app//com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:132)
 	at app//com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:84)
 	at app//com.sun.proxy.$Proxy16.shouldHave(Unknown Source)
-	at app//pages.FormPage.checkEmptyFieldCvcError(FormPage.java:83)
+	at app//pages.FormPage.invalidFormat(FormPage.java:73)
 	at app//test.TestPaymentOnCredit.checkingAnEmptyCvcField(TestPaymentOnCredit.java:343)
 	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@11.0.23/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -807,7 +929,7 @@ Timeout: 4 s.
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="enteringNonExistentNumberInTheMonthField()" classname="test.TestPaymentOnCredit" time="0.575"/>
+  <testcase name="enteringNonExistentNumberInTheMonthField()" classname="test.TestPaymentOnCredit" time="0.578"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

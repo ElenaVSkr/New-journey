@@ -41,8 +41,15 @@ public class FormPage {
     private static final SelenideElement rejected = $$("[class='notification__content']")
             .findBy(Condition.exactText("Ошибка! Банк отказал в проведении операции."));
 
+    private static final SelenideElement buyCard = $("[class='heading heading_size_m heading_theme_alfa-on-white']");
 
-    public static void InputDataEntry(String card, String months, String years, String cardHolders, String CVC) {
+    private static final SelenideElement formCard = $$("[class='button__content']")
+            .findBy(Condition.text("Купить"));
+
+    private static final SelenideElement formCredit = $$("[class='button__content']")
+            .findBy(Condition.text("Купить в кредит"));
+
+    public void inputDataEntry(String card, String months, String years, String cardHolders, String CVC) {
         cardNumber.setValue(card);
         month.setValue(months);
         year.setValue(years);
@@ -54,7 +61,6 @@ public class FormPage {
         orderButton.click();
     }
 
-
     public void successBuy() {
         successBuy.shouldBe(Condition.visible, Duration.ofSeconds(10));
     }
@@ -63,39 +69,29 @@ public class FormPage {
         rejected.shouldBe(Condition.visible, Duration.ofSeconds(10));
     }
 
-    public void checkEmptyFieldErrorForCheckingOneField() {
+    public void invalidFormat() {
         notifications.get(0).shouldBe(Condition.visible).shouldHave(Condition.text("Неверный формат"));
     }
 
-    public void checkEmptyFieldMothError() {
-        notifications.get(0).shouldBe(Condition.visible).shouldHave(Condition.text("Неверный формат"));
-    }
-
-    public void checkEmptyFieldYearError() {
-        notifications.get(0).shouldBe(Condition.visible).shouldHave(Condition.text("Неверный формат"));
-    }
-
-    public void checkEmptyFieldHolderError() {
-        notifications.get(0).shouldBe(Condition.visible).shouldHave(Condition.text("Неверный формат"));
-    }
-
-    public void checkEmptyFieldCvcError() {
-        notifications.get(0).shouldBe(Condition.visible).shouldHave(Condition.text("Неверный формат"));
-    }
-
-    public void checkFieldMothErrorWithInvalidValue() {
+    public void errorTheValidityPeriodOfTheCardIsIncorrectlySpecified() {
         notifications.get(0).shouldBe(Condition.visible).shouldHave(Condition.text("Неверно указан срок действия карты"));
     }
 
-    public void checkFieldYearErrorWithInvalidValue() {
+    public void errorTheCardExpired() {
         notifications.get(0).shouldBe(Condition.visible).shouldHave(Condition.text("Истёк срок действия карты"));
     }
 
-    public void checkEmptyFieldErrorNotification() {
-        notifications.get(0).shouldBe(Condition.visible).shouldHave(Condition.text("Поле обязательно для заполнения"));
+    public void errorTheFieldIsRequired() {
+        notifications.get(3).shouldBe(Condition.visible).shouldHave(Condition.text("Поле обязательно для заполнения"));
     }
 
-    public void errorInTheEmptyOwnerField() {
-        notifications.get(0).shouldBe(Condition.visible).shouldHave(Condition.text("Поле обязательно для заполнения"));
+    public void purchaseByCard() {
+        formCard.click();
+        buyCard.shouldBe(Condition.visible).shouldHave(Condition.text("Оплата по карте"));
+    }
+
+    public void purchaseByCredit() {
+        formCredit.click();
+        buyCard.shouldBe(Condition.visible).shouldHave(Condition.text("Кредит по данным карты"));
     }
 }
