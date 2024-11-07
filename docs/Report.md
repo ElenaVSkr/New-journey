@@ -12,6 +12,8 @@
 1. Необходимо исправить все критические ошибки.
 
 ### Скриншоты сгенерированных отчетов
-![Снимок экрана 2024-11-05 173937](https://github.com/user-attachments/assets/2c71d933-69c0-4fe3-937b-2519b0bf8f1b)
 
-![Снимок экрана 2024-11-05 171328](https://github.com/user-attachments/assets/5805b501-8932-4d89-8c3a-d51eed8a0d18)
+![Снимок экрана 2024-11-07 194312](https://github.com/user-attachments/assets/cf99a546-4e26-432c-a088-bc6f120b24ea)
+
+![Снимок экрана 2024-11-07 194710](https://github.com/user-attachments/assets/574c4993-f7af-4fa5-9aa8-a18b4b9b8ef7)
+
